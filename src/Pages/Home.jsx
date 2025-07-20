@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../Components/NavBar";
 import MainBanner from "../Components/MainBanner";
 import MagicBento from "../Components/MagicBento";
-import Footer from "../Components/Footer";
+import {Link,NavLink} from 'react-router-dom'
 
 function Home() {
   return (
@@ -41,6 +41,22 @@ function Home() {
       glowColor="132, 0, 255"
     />
 </div>
+
+     <div className="flex justify-center items-center mt-10 w-full gap-5">
+ 
+    <MagicBento 
+      textAutoHide={true}
+      enableStars={true}
+      enableSpotlight={true}
+      enableBorderGlow={true}
+      enableTilt={true}
+      enableMagnetism={true}
+      clickEffect={true}
+      spotlightRadius={400}
+      particleCount={20}
+      glowColor="132, 0, 255"
+    />
+</div>
 {/*  Last card */}
 
     <div className="flex justify-center items-center py-12 px-4 sm:px-8">
@@ -51,15 +67,14 @@ function Home() {
         <p className="text-lg sm:text-xl opacity-90 mb-8">
           ROADMAP, TOPIC-WISE-LIST, AND MORE .. – IT'S ALL HERE
         </p>
-        <button className="px-6 py-3 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-[#8f4be6] transition duration-300">
+        <Link to="/form">
+          <button className="px-6 py-3 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-[#8f4be6] transition duration-300">
           Get Started
         </button>
+        </Link>
       </div>
     </div>
 
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
