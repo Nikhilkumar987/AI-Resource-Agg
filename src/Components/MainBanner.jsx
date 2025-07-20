@@ -4,17 +4,12 @@ import Dots from './Dots.jsx';
 import Button from './Button.jsx';
 import TargetCursor from './TargetCursor.jsx';
 import { Link, NavLink } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
 
 const MainBanner = () => {
   return (
-    <div className="relative h-[500px] overflow-hidden bg-black justify-center">
-
-      {/* Optional: TargetCursor for custom cursor */}
-      {/* <TargetCursor 
-        spinDuration={2}
-        hideDefaultCursor={true}
-      /> */}
-
+    <div className="relative h-[600px] overflow-hidden bg-black justify-center">
+     
       <Dots
         particleColors={['#ffffff', '#ffffff']}
         particleCount={200}

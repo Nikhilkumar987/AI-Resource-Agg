@@ -6,10 +6,10 @@ import {Link,NavLink} from 'react-router-dom'
 
 function Home() {
   return (
-    <div className="bg-black w-screen min-h-screen overflow-x-hidden px-4 sm:px-10 md:px-20 py-6 sm:py-10">
+    <div className="bg-black w-screen min-h-screen overflow-x-hidden px-4 sm:px-10 md:px-20 py-6 sm:py-0">
       
       {/* Nav */}
-      <NavBar />
+      {/* <NavBar /> */}
 
       {/* Hero Section */}
       <MainBanner />
@@ -26,7 +26,7 @@ function Home() {
       </div>
 
       {/* MagicBento section */}
-      <div className="flex justify-center items-center mt-10 w-full gap-5">
+      <div className="flex justify-center items-center mt-20 w-full gap-5 scale-110 sm:scale-125 mb-20">
  
     <MagicBento 
       textAutoHide={true}
@@ -42,21 +42,6 @@ function Home() {
     />
 </div>
 
-     <div className="flex justify-center items-center mt-10 w-full gap-5">
- 
-    <MagicBento 
-      textAutoHide={true}
-      enableStars={true}
-      enableSpotlight={true}
-      enableBorderGlow={true}
-      enableTilt={true}
-      enableMagnetism={true}
-      clickEffect={true}
-      spotlightRadius={400}
-      particleCount={20}
-      glowColor="132, 0, 255"
-    />
-</div>
 {/*  Last card */}
 
     <div className="flex justify-center items-center py-12 px-4 sm:px-8">
