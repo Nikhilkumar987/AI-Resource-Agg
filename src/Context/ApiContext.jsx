@@ -1,27 +1,27 @@
-import React, { Children, createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-const Apicontext = createContext();
+// 1. Context name typo fixed
+const ApiContext = createContext();
 
-const ApiContextProvider = ({Children})=>{
+const ApiContextProvider = ({ children }) => {
+  const [response, setResponse] = useState([]);
 
-    const [response,setResponse] = useState([]);
+  return (
+    <ApiContext.Provider value={{ response, setResponse }}>
+      {children} 
+    </ApiContext.Provider>
+  );
+};
 
-    return(
-        <Apicontext.Provider value={{response,setResponse}}>
-        {Children}
-        </Apicontext.Provider>
-    )
-}
+const useApiContext = () => {
+  const context = useContext(ApiContext);
 
-const useApiContext = ()=>
-{
-    const context = useContext(ApiContext);
+  // 3. Error constructor fixed
+  if (!context) {
+    throw new Error("useApiContext must be used within an ApiContextProvider");
+  }
 
-    if(!context)
-    {
-        throw new error("Api error");
-    }
-    return context;
-}
+  return context;
+};
 
-export {useApiContext,ApiContextProvider};
+export { useApiContext, ApiContextProvider };

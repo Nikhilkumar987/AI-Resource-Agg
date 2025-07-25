@@ -8,11 +8,9 @@ const Form = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-    console.log('Selected Level:', level);
-    console.log('Topic Name:', topic);
 
-    if (level && topic) {
-      navigate('/topiresult');
+    if (level && topic.trim()) {
+      navigate('/topicresult');
     } else {
       alert("Please fill out both fields.");
     }
@@ -64,9 +62,8 @@ const Form = () => {
           <div>
             <button
               type="submit"
-              disabled={!level || !topic}
-              className={`w-full font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-200 
-                ${!level || !topic ? 'bg-purple-300 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700 text-white'}`}
+              className="w-full font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-200 
+                bg-purple-600 hover:bg-purple-700 text-white"
             >
               Next
             </button>

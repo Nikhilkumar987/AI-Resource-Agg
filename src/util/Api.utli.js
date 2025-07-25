@@ -1,21 +1,27 @@
 // utils/GenerateRoadMap.js
 import axios from "axios";
 
-const API_KEY = import.meta.env.VITE_OPEN_AI_API_KEY;
+const API_KEY = process.env.OPEN_AI_API_KEY;
 
-export async function GenerateRoadMap(topic,level) {
+export async function GenerateRoadMap(topic, level) {
+  if (!API_KEY) {
+    throw new Error("Missing OpenAI API key in .env");
+  }
+
   const endpoint = "https://api.openai.com/v1/chat/completions";
+  const userLevel = level || "beginner";
 
   const payload = {
     model: "gpt-3.5-turbo",
     messages: [
       {
         role: "system",
-        content: "Give a topic-wise roadmap including subtopics. Only headings, no explanations.",
+        content:
+          "Give a topic-wise roadmap including subtopics. Only headings, no explanations.",
       },
       {
         role: "user",
-        content: `I want to learn ${topic}. Give me the topic-wise roadmap i am at ${level}`,
+        content: `I want to learn ${topic}. Give me the topic-wise roadmap. I am at ${userLevel} level.`,
       },
     ],
     temperature: 0.7,
@@ -30,10 +36,13 @@ export async function GenerateRoadMap(topic,level) {
       },
     });
 
-    const result = aiResponse.data.choices[0].message.content;
-    return result;
+    return aiResponse.data.choices[0].message.content;
   } catch (error) {
-    console.error("Error in getting the roadmap", error.message);
+    if (error.response) {
+      console.error("OpenAI API Error:", error.response.data);
+    } else {
+      console.error("Error in getting the roadmap:", error.message);
+    }
     return null;
   }
 }
