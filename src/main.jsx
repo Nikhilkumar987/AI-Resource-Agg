@@ -15,6 +15,7 @@ import {
 
 import { FormContextProvider } from './Context/Context.jsx';
 import Docs from './Pages/Docs.jsx';
+import TopicResult from './Pages/TopicResult.jsx';
 
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="/form" element={<Form />} />
       <Route path="/" element={<Contact/>}/>
       <Route path="/docs" element={<Docs/>}/>
+      <Route path='/topiresult' element={<TopicResult/>}/>
     </Route>
   )
 );

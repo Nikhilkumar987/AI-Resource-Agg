@@ -1,25 +1,31 @@
 import React from 'react';
 import { useFormContext } from '../Context/Context';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
-  const { level, setLevel } = useFormContext();
-  const {topic ,setTopic} = useFormContext();
+  const { level, setLevel, topic, setTopic } = useFormContext();
+  const navigate = useNavigate();
+
   const handleForm = (e) => {
     e.preventDefault();
     console.log('Selected Level:', level);
-    console.log('Topic Name :',topic);
+    console.log('Topic Name:', topic);
+
+    if (level && topic) {
+      navigate('/topiresult');
+    } else {
+      alert("Please fill out both fields.");
+    }
   };
 
   const handleChange = (e) => {
-    const {name,value} = e.target;
-    if(name === "Level")
-    setLevel(value);
-    else if(name==='TopicName')
-    setTopic(value);
+    const { name, value } = e.target;
+    if (name === "Level") setLevel(value);
+    else if (name === "TopicName") setTopic(value);
   };
 
   return (
-     <div className="min-h-screen flex items-center justify-center bg-black">
+    <div className="min-h-screen flex items-center justify-center bg-black">
       <div className="bg-white/10 backdrop-blur-md shadow-xl rounded-2xl p-8 w-full max-w-md text-white border border-white/20">
         <h2 className="text-2xl font-semibold mb-6 text-center">Select Your Level</h2>
 
@@ -55,12 +61,16 @@ const Form = () => {
             </select>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-purple-600 hover:bg-purple-700 transition-all duration-200 text-white font-semibold py-2 px-4 rounded-lg shadow-md"
-          >
-            Next
-          </button>
+          <div>
+            <button
+              type="submit"
+              disabled={!level || !topic}
+              className={`w-full font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-200 
+                ${!level || !topic ? 'bg-purple-300 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700 text-white'}`}
+            >
+              Next
+            </button>
+          </div>
         </form>
       </div>
     </div>
