@@ -15,9 +15,9 @@ function Layout() {
         isHomePage?(<></>):(<NavBar/>)
       }
 
-      <main>
+    
         <Outlet />
-      </main>
+     
 
       <Footer />
     </>
