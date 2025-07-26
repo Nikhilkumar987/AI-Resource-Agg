@@ -5,7 +5,7 @@ import Button from './Button.jsx';
 import TargetCursor from './TargetCursor.jsx';
 import { Link, NavLink } from 'react-router-dom';
 import NavBar from './NavBar.jsx';
-
+import TextType from './TextType.jsx';  
 const MainBanner = () => {
   return (
     <div className="relative h-[600px] overflow-hidden bg-black justify-center">
@@ -24,7 +24,14 @@ const MainBanner = () => {
       {/* Overlay content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
         <h1 className="text-4xl font-bold drop-shadow-lg text-center px-4">
-          WELCOME TO AI RESOURCE AGGREGATOR
+            <TextType 
+              text={["AI-Powered Paths to Learn,Build,and Grow.", "Master Any Tech Topic with a Personalized Roadmap", "Happy Learning!"]}
+              typingSpeed={75}
+               pauseDuration={1500}
+              showCursor={true}
+              CursorBlinkDuration={0.5}
+              cursorCharacter="|"
+            />
         </h1>
         <p className="mt-2 text-lg drop-shadow-md text-center px-2">
           AI CREATED TO HELP YOU LEARN FAST

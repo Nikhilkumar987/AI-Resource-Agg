@@ -1,7 +1,7 @@
 // utils/GenerateRoadMap.js
 import axios from "axios";
 
-const API_KEY = process.env.OPEN_AI_API_KEY;
+const API_KEY = ""
 
 export async function GenerateRoadMap(topic, level) {
   if (!API_KEY) {
@@ -17,7 +17,7 @@ export async function GenerateRoadMap(topic, level) {
       {
         role: "system",
         content:
-          "Give a topic-wise roadmap including subtopics. Only headings, no explanations.",
+          "Give a topic-wise roadmap including subtopics. Only headings,and some subtopic no explanations give fixed answer each time 10 headings max and 3 subtopics per heading. " ,
       },
       {
         role: "user",
@@ -25,7 +25,7 @@ export async function GenerateRoadMap(topic, level) {
       },
     ],
     temperature: 0.7,
-    max_tokens: 600,
+    max_tokens: 100,
   };
 
   try {

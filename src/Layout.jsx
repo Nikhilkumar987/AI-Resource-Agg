@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import NavBar from './Components/NavBar';
-
+import HomeNavBar from './Components/HomeNavBar';
 import Footer from './Components/Footer';
 
 function Layout() {
@@ -11,7 +11,9 @@ function Layout() {
   return (
     <>
       {/* Use consistent spacing and avoid wrapping NavBar in extra div unless styling demands it */}
-      <NavBar/>
+      {
+        isHomePage?(<></>):(<NavBar/>)
+      }
 
       <main>
         <Outlet />

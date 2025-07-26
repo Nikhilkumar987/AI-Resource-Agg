@@ -43,7 +43,7 @@ const Form = () => {
             />
 
             <label htmlFor="Level" className="block mt-4 mb-2 text-sm font-medium">
-              Level:
+              Current Level:
             </label>
             <select
               id="Level"
