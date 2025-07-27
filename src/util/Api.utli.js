@@ -1,8 +1,8 @@
 // utils/GenerateRoadMap.js
 import axios from "axios";
 
-const API_KEY = ""
-
+const API_KEY = '';
+;
 export async function GenerateRoadMap(topic, level) {
   if (!API_KEY) {
     throw new Error("Missing OpenAI API key in .env");
@@ -25,7 +25,7 @@ export async function GenerateRoadMap(topic, level) {
       },
     ],
     temperature: 0.7,
-    max_tokens: 100,
+    max_tokens: 60,
   };
 
   try {

@@ -16,7 +16,7 @@ const TextType = ({
   hideCursorWhileTyping = false,
   cursorCharacter = "|",
   cursorClassName = "",
-  cursorBlinkDuration = 0.5,
+  cursorblinkduration = 0.0,
   textColors = [],
   variableSpeed,
   onSentenceComplete,

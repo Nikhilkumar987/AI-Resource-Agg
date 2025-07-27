@@ -60,7 +60,7 @@ function Home() {
         </div>
         {/* <SplashCursor>
      {/* // Curved Loop Banner */}
-         {/* <div className="flex justify-center items-center text-center mb-10">
+          {/* <div className="flex justify-center items-center text-center mb-10">
           <CurvedLoop
             marqueeText="Be ✦ Smart ✦ With ✦ Aggri ✦"
             speed={3}
@@ -69,7 +69,7 @@ function Home() {
             className="text-sm sm:text-base font-semibold bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent"
           />
         </div>
-      </SplashCursor>  */} 
+      </SplashCursor>   */} 
     </div>
   );
 }

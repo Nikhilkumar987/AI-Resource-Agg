@@ -15,8 +15,10 @@ function Layout() {
         isHomePage?(<></>):(<NavBar/>)
       }
 
-    
-        <Outlet />
+    <main>
+       <Outlet />
+    </main>
+       
      
 
       <Footer />
