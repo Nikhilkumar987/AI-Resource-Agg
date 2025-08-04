@@ -29,7 +29,7 @@ const MainBanner = () => {
               typingSpeed={75}
                pauseDuration={1500}
               showCursor={true}
-              CursorBlinkDuration={0.5}
+             
               cursorCharacter="|"
             />
         </h1>

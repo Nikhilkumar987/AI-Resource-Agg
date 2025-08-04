@@ -10,11 +10,12 @@ const Articles = () => {
 
   useEffect(() => {
     const fetchArticlesForSubtopics = async () => {
-      if (!response || hasFetched.current) return;
+      if (!response || hasFetched.current || typeof response !== "string") return;
       hasFetched.current = true;
 
       // Split roadmap text into subtopics (by line or bullet)
-      const subtopics = response.split('\n')
+      const subtopics = response
+        .split("\n")
         .map((line) => line.trim())
         .filter((line) => line && !line.toLowerCase().includes("roadmap"));
 
@@ -43,6 +44,7 @@ const Articles = () => {
     }
   }, [response, articleList, setArticleList]);
 
+  // Convert URLs in text to clickable links
   const renderWithLinks = (text) => {
     if (!text) return null;
     const urlRegex = /(https?:\/\/[^\s]+)/g;

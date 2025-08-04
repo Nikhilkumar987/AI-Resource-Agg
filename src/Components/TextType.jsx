@@ -16,7 +16,7 @@ const TextType = ({
   hideCursorWhileTyping = false,
   cursorCharacter = "|",
   cursorClassName = "",
-  cursorBlinkDuration = 0.0,
+  cursorBlinkDuration = 0.5,
   textColors = [],
   variableSpeed,
   onSentenceComplete,
@@ -154,12 +154,14 @@ const TextType = ({
     hideCursorWhileTyping &&
     (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
+    const domProps = { ...props };
+delete domProps.cursorBlinkDuration;
   return createElement(
     Component,
     {
       ref: containerRef,
       className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
-      ...props,
+      ...domProps,
     },
     <span className="inline" style={{ color: getCurrentTextColor() }}>
       {displayedText}

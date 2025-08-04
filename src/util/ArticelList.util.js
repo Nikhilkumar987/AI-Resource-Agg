@@ -15,7 +15,7 @@ export async function fetchArticleList(topic) {
     messages: [
       {
         role: "system",
-        content: "provide me a list of articles related to the topic from mdn,w3school,javatpoint,geekforgeeks only."
+        content: "provide me a list of articles related to the topic from mdn,w3school,geekforgeeks only."
       },
       {
         role: "user",
