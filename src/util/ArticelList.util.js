@@ -23,7 +23,7 @@ export async function fetchArticleList(topic) {
       }
     ],
     temperature: 0.7,
-    max_tokens: 60,
+    max_tokens: 1200,
   };
 
   try {
