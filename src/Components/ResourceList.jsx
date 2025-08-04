@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Articles from "./Articles";
+import Projectlist from "./Projectlist";
+
 
 const ResourceList = () => {
   const [activeTab, setActiveTab] = useState("articles");
 
   const tabs = [
     { id: "articles", label: "Articles" },
-    { id: "youtube", label: "YouTube" },
-    { id: "blogs", label: "Blogs" },
+    { id: "projects", label: "projects" },
   ];
 
   return (
@@ -34,24 +35,11 @@ const ResourceList = () => {
       {/* Tab Content */}
       <div className="bg-gray-900 shadow-lg rounded-xl p-6 min-h-[300px] text-white">
         {activeTab === "articles" && <Articles />}
-        {activeTab === "youtube" && (
+        
+        {activeTab === "projects" && (
           <div>
-            <h2 className="text-xl font-semibold mb-4 text-white">
-              YouTube Resources
-            </h2>
-            <p className="text-gray-400">
-              (Integrate your YouTube component or fetch YouTube links here)
-            </p>
-          </div>
-        )}
-        {activeTab === "blogs" && (
-          <div>
-            <h2 className="text-xl font-semibold mb-4 text-white">
-              Blog Resources
-            </h2>
-            <p className="text-gray-400">
-              (Integrate your Blog component or fetch blog links here)
-            </p>
+
+            <Projectlist/>
           </div>
         )}
       </div>

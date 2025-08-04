@@ -1,7 +1,7 @@
 // utils/GenerateRoadMap.js
 import axios from "axios";
 
-const API_KEY = '';
+const API_KEY = import.meta.env.VITE_OPEN_AI_API_KEY;
 ;
 export async function GenerateRoadMap(topic, level) {
   if (!API_KEY) {

@@ -36,6 +36,9 @@ const NavBar = () => {
         <NavLink to="/footer" className="text-white hover:text-purple-300 transition">
           Contact
         </NavLink>
+        <NavLink to="/form" className="text-white hover:text-purple-300 transition">
+          Roadmap
+        </NavLink>
       </div>
 
       {/* Right - GitHub Button (Visible on Desktop) */}

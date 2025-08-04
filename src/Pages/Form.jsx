@@ -65,7 +65,7 @@ const Form = () => {
               className="w-full font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-200 
                 bg-purple-600 hover:bg-purple-700 text-white"
             >
-              Next
+              Generate
             </button>
           </div>
         </form>

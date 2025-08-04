@@ -3,12 +3,11 @@ import React, { createContext, useContext, useState } from "react";
 const ApiContext = createContext();
 
 export const ApiContextProvider = ({ children }) => {
-  const [response, setResponse] = useState("");        // topic input
+  const [response, setResponse] = useState([]);        // topic input
   const [articleList, setArticleList] = useState("");  // articles from API
-  const [ytVideos,setYTVideos] = useState(""); // YouTube videos from API
-
+  const [projects,setProjects] = useState('');
   return (
-    <ApiContext.Provider value={{ response, setResponse, articleList, setArticleList, ytVideos,setYTVideos }}>
+    <ApiContext.Provider value={{ response, setResponse, articleList, setArticleList, projects,setProjects}}>
       {children}
     </ApiContext.Provider>
   );
